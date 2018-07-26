@@ -10,13 +10,13 @@ namespace OOPCachingSpeedTest
         [Test]
         public async Task TenThousandReads()
         {
-            await Tests.TenThousandReads(new CouchBaseContext());
+            await new Tests().TenThousandReads(new CouchBaseContext());
         }
 
         [Test]
         public async Task TenThousandWrites()
         {
-            await Tests.TenThousandWrites(new CouchBaseContext());
+            await new Tests().TenThousandWrites(new CouchBaseContext());
         }
     }
 }

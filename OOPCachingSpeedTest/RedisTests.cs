@@ -11,13 +11,13 @@ namespace OOPCachingSpeedTest
         [Test]
         public async Task TenThousandReads()
         {
-            await Tests.TenThousandReads(new RedisCacheContext(ConnectionMultiplexer.Connect("127.0.0.1").GetDatabase()));
+            await new Tests().TenThousandReads(new RedisCacheContext(ConnectionMultiplexer.Connect("127.0.0.1").GetDatabase()));
         }
 
         [Test]
         public async Task TenThousandWrites()
         {
-            await Tests.TenThousandWrites(new RedisCacheContext(ConnectionMultiplexer.Connect("127.0.0.1").GetDatabase()));
+            await new Tests().TenThousandWrites(new RedisCacheContext(ConnectionMultiplexer.Connect("127.0.0.1").GetDatabase()));
         }
     }
 }

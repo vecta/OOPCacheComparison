@@ -8,9 +8,9 @@ using OOPCachingSpeedTest.Checksum;
 
 namespace OOPCachingSpeedTest
 {
-    public static class Tests
+    public class Tests
     {
-        public static async Task TenThousandReads(ICacheContext context)
+        public async Task TenThousandReads(ICacheContext context)
         {
             const string cacheKey = "cacheKey";
             var stopwatch = new Stopwatch();
@@ -31,8 +31,8 @@ namespace OOPCachingSpeedTest
             Console.WriteLine("Time: " + stopwatch.ElapsedMilliseconds);
         }
 
-        [Test]
-        public static async Task TenThousandWrites(ICacheContext context)
+  
+        public async Task TenThousandWrites(ICacheContext context)
         {
             var stopwatch = new Stopwatch();
             var cache = new VersionedCache(context, new ClassChecksumCalculator(new LocalCache()));
